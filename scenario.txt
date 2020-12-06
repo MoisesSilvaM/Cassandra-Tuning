@@ -1,0 +1,63 @@
+###################################################### -*- mode: r -*- #####
+## Scenario setup for Iterated Race (iRace).
+############################################################################
+## To use the default value of a parameter of iRace, simply do not set
+## the parameter (comment it out in this file, and do not give any
+## value on the command line).
+
+## File that contains the description of the parameters.
+parameterFile = "./parameters.txt"
+
+## Directory where the programs will be run.
+execDir = "./arena"
+
+## Directory where tuning instances are located, either absolute path or
+## relative to current directory.
+trainInstancesDir = "/home/moises_silva/ycsb-0.17.0/workloads"
+
+## File that contains a list of training instances and optionally
+## additional parameters for them. If trainInstancesDir is provided, irace
+## will search for the files in this folder.
+trainInstancesFile = "./instances-list.txt"
+
+## The maximum number of runs (invocations of targetRunner) that will performed. It
+## determines the (maximum) budget of experiments for the tuning.
+maxExperiments = 500
+
+## Script called for each configuration that executes the target algorithm
+## to be tuned. See templates.
+# targetRunner = ""
+
+## File that contains a set of initial configurations. If empty or NULL,
+## all initial configurations are randomly generated.
+#configurationsFile = "./configurations.txt"
+
+## Indicates the number of decimal places to be considered for the
+## real parameters.
+digits = 2
+
+## Directory where testing instances are located, either absolute or
+## relative to current directory.
+testInstancesDir = "/home/moises_silva/ycsb-0.17.0/workloads"
+
+## File containing a list of test instances and optionally additional
+## parameters for them.
+testInstancesFile = "./instances-test-list.txt"
+
+## A value of 0 silences all debug messages. Higher values provide
+## more verbose debug messages.
+# debugLevel = 0
+
+## Minimum number of configurations needed to continue the execution of
+## each race (iteration).
+#minNbSurvival = 1
+
+## File that contains a list of logical expressions that cannot be TRUE
+## for any evaluated configuration. If empty or NULL, do not use forbidden
+## expressions.
+#forbiddenFile = "forbidden.txt"
+
+
+## END of scenario file
+############################################################################
+

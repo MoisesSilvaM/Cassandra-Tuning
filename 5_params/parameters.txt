@@ -1,0 +1,6 @@
+# name			   switch	type	    values		[conditions (using R syntax)]
+concurrent_writes     	     ""		 i  	     (8, 64)
+file_cache_size_in_mb        ""		 i  	     (256, 2048)
+memtable_cleanup_threshold   ""		 r  	     (0.1, 0.9)
+concurrent_compactors        ""		 i  	     (2, 16)
+compaction_method     	     ""	         c           (LeveledCompactionStrategy, SizeTieredCompactionStrategy)

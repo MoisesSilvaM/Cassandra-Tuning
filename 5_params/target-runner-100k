@@ -1,0 +1,85 @@
+#!/bin/bash
+###############################################################################
+# This script is to tune the ACOTSP software.
+#
+# PARAMETERS:
+# $1 is the ID of the candidate to be evaluated
+# $2 is the instance ID
+# $3 is the seed
+# $4 is the instance name
+# The rest ($* after `shift 4') are parameters for running ACOTSP
+##AND COMPACTION = { 'class' : '$compaction_method' };"
+# RETURN VALUE:
+# This script should print a single numerical value (the value to be minimized).
+###############################################################################
+error() {
+    echo "`TZ=UTC date`: $0: error: $@" >&2
+    exit 1
+}
+CONFIG_ID=$1
+INSTANCE_ID=$2
+SEED=$3
+INSTANCE=$4
+# All other parameters are the candidate parameters to be passed to program
+shift 4 || error "Not enough parameters"
+concurrent_writes=$1
+file_cache_size_in_mb=$2
+memtable_cleanup_threshold=$3
+concurrent_compactors=$4
+compaction_method=$5
+
+function F1()
+{
+sudo service cassandra stop
+sleep 1
+sudo rm -rf /var/lib/cassandra/data
+sudo rm -rf /var/lib/cassandra/commitlog
+sudo rm -rf /var/lib/cassandra/saved_caches
+sudo rm -rf /var/lib/cassandra/hints
+sleep 1
+sudo cp /etc/cassandra/cassandra-generic.yaml /etc/cassandra/cassandra.yaml
+sleep 1
+sudo sed -i "s/CONCURRENTWRITES/$concurrent_writes/g" /etc/cassandra/cassandra.yaml
+sudo sed -i "s/FILECACHESIZE/$file_cache_size_in_mb/g" /etc/cassandra/cassandra.yaml
+sudo sed -i "s/MEMTABLECLEANUP/$memtable_cleanup_threshold/g" /etc/cassandra/cassandra.yaml
+sudo sed -i "s/CONCURRENTCOMPACTORS/$concurrent_compactors/g" /etc/cassandra/cassandra.yaml
+sleep 1
+sudo service cassandra start
+sleep 5
+export CQLSH_NO_BUNDLED=true 
+y=0
+mode=$(nodetool netstats 2>node.txt | grep 'Mode')
+while [ "${mode#* }" != "NORMAL" ] && [ $y -le 33 ]
+do
+  export CQLSH_NO_BUNDLED=true 
+  sleep 3
+  mode=$(nodetool netstats 2>node.txt | grep 'Mode')
+  y=$(( $y + 1 ))
+done
+}
+
+F1
+
+##RETRY
+ret=0
+while [ "${mode#* }" != "NORMAL" ] && [ $ret -le 3 ]
+do
+F1
+  ret=$(( $ret + 1 ))
+done 
+#END-RETRY
+
+sleep 2
+cqlsh -e "CREATE KEYSPACE ycsb WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 2 };"
+sleep 2
+cqlsh -e "create table ycsb.usertable(y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar) WITH COMPACTION = { 'class' : '$compaction_method' };"
+sleep 2
+/home/moises_silva/ycsb-0.17.0/bin/ycsb.sh load cassandra-cql -p hosts=127.0.0.1 -threads 4 -P /home/moises_silva/ycsb-0.17.0/workloads/workloada100 > /home/moises_silva/resultados/output.dat 2>errload.txt
+sleep 2
+/home/moises_silva/ycsb-0.17.0/bin/ycsb.sh run cassandra-cql -p hosts=127.0.0.1 -threads 4 -P ${INSTANCE} > /home/moises_silva/resultados/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat 2>err.txt
+sleep 1
+COST=$(grep "Throughput" /home/moises_silva/resultados/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat);
+TIME=$(grep "RunTime" /home/moises_silva/resultados/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat);
+echo "${COST##* }-${TIME##* }-$( echo "$INSTANCE" | cut -d "/" -f 6)" >> /home/moises_silva/tuning/arena/Total-Throughput-output-.txt
+echo ${COST##* }
+exit 0 
