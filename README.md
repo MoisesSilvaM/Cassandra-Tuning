@@ -3,7 +3,9 @@
 - Cassandra (https://cassandra.apache.org/)
 - YCSB (https://github.com/brianfrankcooper/YCSB)
 
+
 ##Usage##
+
 #Create a directory for storing the tuning scenario setup
     $ mkdir ~/tuning
     $ cd ~/tuning
