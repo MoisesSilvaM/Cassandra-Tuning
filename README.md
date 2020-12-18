@@ -18,11 +18,11 @@
 
 #Copy the workload files to the YCSB workload folder
 
-#create a directory called "arena"
+#Create a directory called "arena"
 
     $ mkdir ~/arena
 
-#change the experiment budget in the scenario file.
+#Change the experiment budget in the scenario file.
 
 #Include the default configuration uncommenting the text configurationsFile = "./configurations.txt" in scenario file.
 
