@@ -5,6 +5,7 @@
 
 
 ##Usage##
+
 #Create a directory for storing the tuning scenario setup
     $ mkdir ~/tuning
     $ cd ~/tuning
