@@ -21,10 +21,6 @@
 #Create a directory called "arena"
 
     $ mkdir ~/arena
-    
-#Create a directory called "results"
-
-    $ mkdir ~/results    
 
 #Change the experiment budget in the scenario file.
 
