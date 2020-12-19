@@ -48,6 +48,8 @@ commitlog_segment=$7
 mem_flush_writers=$8
 summary_capacity=$9
 
+path=/home/moises_silva/
+
 function F1()
 {
 sudo service cassandra stop
@@ -113,12 +115,12 @@ cqlsh -e "CREATE KEYSPACE ycsb WITH REPLICATION = { 'class' : 'SimpleStrategy', 
 sleep 2
 cqlsh -e "create table ycsb.usertable(y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar) WITH COMPACTION = { 'class' : '$compaction_method' };"
 sleep 2
-/home/moises_silva/ycsb-0.17.0/bin/ycsb.sh load cassandra-cql -p hosts=127.0.0.1 -threads 4 -P /home/moises_silva/ycsb-0.17.0/workloads/workloada100 > /home/moises_silva/resultados/output.dat 2>errload.txt
+${path}ycsb-0.17.0/bin/ycsb.sh load cassandra-cql -p hosts=127.0.0.1 -threads 4 -P ${path}ycsb-0.17.0/workloads/workloada100 > ${path}tuning/arena/output.dat 2>errload.txt
 sleep 2
-/home/moises_silva/ycsb-0.17.0/bin/ycsb.sh run cassandra-cql -p hosts=127.0.0.1 -threads 4 -P ${INSTANCE} > /home/moises_silva/resultados/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat 2>err.txt
+${path}ycsb-0.17.0/bin/ycsb.sh run cassandra-cql -p hosts=127.0.0.1 -threads 4 -P ${INSTANCE} > ${path}tuning/arena/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat 2>err.txt
 sleep 1
-COST=$(grep "Throughput" /home/moises_silva/resultados/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat);
-TIME=$(grep "RunTime" /home/moises_silva/resultados/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat);
-echo "${COST##* }-${TIME##* }-$( echo "$INSTANCE" | cut -d "/" -f 6)" >> /home/moises_silva/tuning/arena/Total-Throughput-output-.txt
+COST=$(grep "Throughput" ${path}tuning/arena/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat);
+TIME=$(grep "RunTime" ${path}tuning/arena/test-output-${CONFIG_ID}-${INSTANCE_ID}-${SEED}.dat);
+echo "${COST##* }-${TIME##* }-$( echo "$INSTANCE" | cut -d "/" -f 6)" >> ${path}tuning/arena/Throughput-output-.txt
 echo ${COST##* }
 exit 0 
