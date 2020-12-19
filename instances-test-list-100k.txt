@@ -13,3 +13,11 @@ workloada100
 #workloadd100
 #workloade100
 #workloadf100
+
+##Uncomment the following 6 parameters to test the 6 workloads as an instance.
+#workloada16
+#workloadb16
+#workloadc16
+#workloadd16
+#workloade16
+#workloadf16
