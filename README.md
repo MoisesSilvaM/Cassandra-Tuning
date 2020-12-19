@@ -33,3 +33,5 @@
 Call the script:
 
     $ sh irace.sh
+    or
+    $ nohup ./irace.sh > irace.out 2> irace.err &
