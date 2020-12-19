@@ -11,7 +11,7 @@
     $ mkdir ~/tuning
     $ cd ~/tuning
 
-#Copy the files to the scenario directory, 
+#Copy all the files to the scenario directory, 
 
     Copy the contents of the 23_params folder to the tuning folder if you want to adjust 23 parameters
     Copy the contents of the 5_params folder to the tuning folder if you want to adjust 5 parameters.
