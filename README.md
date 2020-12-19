@@ -14,6 +14,7 @@
 #Copy all the files to the scenario directory, 
 
     Copy the contents of the 23_params folder to the tuning folder if you want to adjust 23 parameters
+    or
     Copy the contents of the 5_params folder to the tuning folder if you want to adjust 5 parameters.
 
 #Copy the workload files to the YCSB workload folder
@@ -26,9 +27,15 @@
 
 #Include the default configuration uncommenting the text configurationsFile = "./configurations.txt" in scenario file.
 
-#Select the workloads to adjust, uncommenting the workload in the instance-list.txt file.
+#Select the workloads to adjust, uncommenting the workload in the instances file 
 
-#Select the workloads to test, uncommenting the workload in the files instance - test-list-100k.txt (for the first scenario) and instance - test-list-1m.txt (for the second scenario)
+    - instance-list.txt file.
+
+#Select the workloads to test, uncommenting the workload in the instances file  
+
+    - test-list-100k.txt (for the first scenario)
+    and
+    - test-list-1m.txt (for the second scenario)
 
 Call the script:
 
