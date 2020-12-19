@@ -1,45 +1,50 @@
-##Requisites##
-- Irace (https://iridia.ulb.ac.be/irace/)
-- Cassandra (https://cassandra.apache.org/)
-- YCSB (https://github.com/brianfrankcooper/YCSB)
+This repository contains a basic experimental setup to automatically configure the Cassandra NoSQL database using irace. It uses the YCSB benchmark.
 
+(paper to be submitted)
 
-##Usage##
+# Prerequisites
+- Irace https://iridia.ulb.ac.be/irace/
+- Cassandra https://cassandra.apache.org/
+- YCSB https://github.com/brianfrankcooper/YCSB
 
-#Create a directory for storing the tuning scenario setup
+# Usage
+
+Clone the repository.
+
+```
+$ git clone https://github.com/MoisesSilvaM/Cassandra-Tuning
+$ cd Cassandra-Tuning
+
+```
+
+Create a directory for storing the tuning scenario setup.
 
     $ mkdir ~/tuning
-    $ cd ~/tuning
 
-#Copy all the files to the scenario directory, 
+Copy all the files to the scenario directory:
 
-    Copy the contents of the 23_params folder to the tuning folder if you want to adjust 23 parameters
-    or
-    Copy the contents of the 5_params folder to the tuning folder if you want to adjust 5 parameters.
+```cp 23_params/* ~/tuning``` 
+ if you want to configure 23 parameters, or
+ ```cp 5_params/* ~/tuning```
+ if you want to configure only the 5 most important parameters.
 
-#Copy the workload files to the YCSB workload folder
+Copy the workload files you're interested in to the YCSB workload folder.
 
-#Create a directory called "arena"
+Create a directory called "arena"
 
     $ mkdir ~/arena
 
-#Change the experiment budget in the scenario file.
+Change the experiment budget in the scenario file.
 
-    - maxExperiments = budget
+    maxExperiments = budget
 
-#Include the default configuration uncommenting the text in scenario file.
+If you want to include the default configuration, uncomment the `configurationsFile` option in scenario file.
 
-    - configurationsFile = "./configurations.txt"
+    configurationsFile = "./configurations.txt"
 
-#Select the workloads to adjust, uncommenting the workload in the instances file 
+Select the workloads to adjust by commenting/uncommenting the relative workload in the instances file.
 
-    - instance-list.txt file.
-
-#Select the workloads to test, uncommenting the workload in the instances file  
-
-    - test-list-100k.txt (for the first scenario)
-    and
-    - test-list-1m.txt (for the second scenario)
+Check that all the paths are correct, and point to valid file locations.
 
 Call the script:
 
