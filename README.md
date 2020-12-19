@@ -25,7 +25,11 @@
 
 #Change the experiment budget in the scenario file.
 
-#Include the default configuration uncommenting the text configurationsFile = "./configurations.txt" in scenario file.
+    - maxExperiments = budget
+
+#Include the default configuration uncommenting the text in scenario file.
+
+    - configurationsFile = "./configurations.txt"
 
 #Select the workloads to adjust, uncommenting the workload in the instances file 
 
