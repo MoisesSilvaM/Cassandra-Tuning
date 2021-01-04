@@ -1,0 +1,297 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 3.3.2238:2239
+# Copyright (C) 2010-2019
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /home/moises_silva/R/x86_64-pc-linux-gnu-library/3.4/irace
+# called with: 
+Warning: A default scenario file './scenario.txt' has been found and will be read
+# Adding 1 initial configuration(s) from file '/home/moises_silva/tuning/configurations.txt' 
+# 2020-11-10 22:01:06 UTC: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 6
+# minNbSurvival: 1
+# nbParameters: 23
+# seed: 280774219
+# confidence level: 0.95
+# budget: 2000
+# mu: 5
+# deterministic: FALSE
+
+# 2020-11-10 22:01:06 UTC: Iteration 1 of 6
+# experimentsUsedSoFar: 0
+# remainingBudget: 2000
+# currentBudget: 333
+# nbConfigurations: 55
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|         55|         29|   -6759.954032|         55|01:02:35|   NA|  NA|    NA|
+|x|          2|         55|          4|   -6595.361897|        110|01:03:44|+0.06|0.53|0.9225|
+|x|          3|         55|         28|   -6500.360419|        165|01:04:46|+0.01|0.34|1.0177|
+|x|          4|         55|         47|   -6485.781284|        220|01:02:37|-0.03|0.23|1.0343|
+|=|          5|         55|         14|   -6623.190972|        275|01:01:00|+0.02|0.22|0.9864|
+|=|          6|         55|         14|   -6650.189338|        330|01:01:16|+0.02|0.18|0.9865|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          14    mean value:    -6650.189338
+Description of the best-so-far configuration:
+   .ID. concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary .PARENT.
+14   14                38             357           0.8377                  6 SizeTieredCompactionStrategy        237               24                  9                2352        heap_buffers                   11                    24          True             210             17               169             32                42                    27                   1430                41              1046           105       NA
+
+# 2020-11-11 04:17:07 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+14                38             357           0.8377                  6 SizeTieredCompactionStrategy        237               24                  9                2352        heap_buffers                   11                    24          True             210             17               169             32                42                    27                   1430                41              1046           105
+# 2020-11-11 04:17:07 UTC: Iteration 2 of 6
+# experimentsUsedSoFar: 330
+# remainingBudget: 1670
+# currentBudget: 334
+# nbConfigurations: 48
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          7|         48|         80|   -6943.480072|         48|00:53:24|   NA|  NA|    NA|
+|x|          4|         48|         93|   -6909.663181|         95|00:52:21|-0.06|0.47|1.0451|
+|x|          3|         48|         70|   -6918.384640|        142|00:52:00|+0.03|0.36|0.9159|
+|x|          6|         48|         93|   -6963.491757|        189|00:52:00|+0.00|0.25|0.9981|
+|=|          1|         48|         93|   -6947.066458|        236|00:51:51|+0.00|0.20|1.0034|
+|=|          2|         48|        101|   -6915.284459|        283|00:51:51|+0.01|0.18|1.0096|
+|=|          5|         48|        101|   -6929.752262|        330|00:51:47|+0.01|0.15|0.9962|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         101    mean value:    -6929.752262
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary .PARENT.
+101  101                20             344           0.6625                 16 SizeTieredCompactionStrategy        249               33                  3                1539        heap_buffers                    7                    48         False             363             95               316             26                46                    32                   1209                53              1089            89       14
+
+# 2020-11-11 10:22:26 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+101                20             344           0.6625                 16 SizeTieredCompactionStrategy        249               33                  3                1539        heap_buffers                    7                    48         False             363             95               316             26                46                    32                   1209                53              1089            89
+# 2020-11-11 10:22:26 UTC: Iteration 3 of 6
+# experimentsUsedSoFar: 660
+# remainingBudget: 1340
+# currentBudget: 335
+# nbConfigurations: 42
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          8|         42|        114|   -7162.810687|         42|00:46:18|   NA|  NA|    NA|
+|x|          3|         42|        114|   -7085.750732|         83|00:45:09|+0.11|0.56|1.0372|
+|x|          5|         42|        115|   -7016.008083|        124|00:45:04|+0.23|0.49|0.9503|
+|x|          7|         42|        114|   -7012.454588|        165|00:45:27|+0.14|0.36|0.9134|
+|-|          4|         24|        134|   -6980.528725|        206|00:45:23|-0.06|0.15|1.0466|
+|=|          2|         24|        134|   -6982.119620|        229|00:25:29|-0.02|0.15|0.9937|
+|=|          6|         24|        134|   -6979.016153|        252|00:25:33|+0.02|0.16|0.9902|
+|=|          1|         24|        134|   -6971.331995|        275|00:25:27|+0.07|0.19|0.9650|
+|-|          9|         11|        129|   -6969.696837|        299|00:26:34|+0.00|0.12|0.9454|
+|=|         10|         11|        134|   -6955.292573|        310|00:12:11|-0.03|0.07|0.9453|
+|=|         11|         11|        129|   -6921.526494|        321|00:12:14|-0.03|0.06|0.9673|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         129    mean value:    -6921.526494
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary .PARENT.
+129  129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120      101
+
+# 2020-11-11 16:17:20 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120
+# 2020-11-11 16:17:20 UTC: Iteration 4 of 6
+# experimentsUsedSoFar: 981
+# remainingBudget: 1019
+# currentBudget: 339
+# nbConfigurations: 29
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         12|         29|        146|   -7052.186178|         29|00:32:08|   NA|  NA|    NA|
+|x|          1|         29|        146|   -7012.114144|         57|00:31:02|+0.03|0.51|0.5476|
+|x|          5|         29|        129|   -6963.205131|         85|00:31:03|+0.01|0.34|0.8306|
+|x|          8|         29|        129|   -6985.201761|        113|00:30:53|+0.05|0.29|0.8595|
+|=|          6|         29|        129|   -6978.015474|        141|00:31:05|-0.01|0.19|0.9551|
+|=|          9|         29|        129|   -6983.128024|        169|00:31:07|+0.01|0.17|0.9778|
+|=|         10|         29|        129|   -6898.888750|        197|00:31:38|+0.02|0.16|0.9737|
+|=|          2|         29|        129|   -6904.703792|        225|00:31:31|+0.06|0.18|0.9369|
+|=|         11|         29|        129|   -6917.077459|        253|00:31:31|+0.05|0.16|0.9504|
+|=|          3|         29|        129|   -6907.684123|        281|00:31:32|+0.03|0.13|0.9627|
+|=|          4|         29|        129|   -6906.067331|        309|00:31:17|+0.05|0.13|0.9560|
+|-|          7|          3|        129|   -6913.638500|        337|00:31:37|+0.19|0.26|0.4891|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         129    mean value:    -6913.638500
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary .PARENT.
+129  129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120      101
+
+# 2020-11-11 22:33:50 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120
+# 2020-11-11 22:33:50 UTC: Iteration 5 of 6
+# experimentsUsedSoFar: 1318
+# remainingBudget: 682
+# currentBudget: 341
+# nbConfigurations: 27
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         13|         27|        189|   -6764.069264|         27|00:30:44|   NA|  NA|    NA|
+|x|         12|         27|        182|   -6749.051279|         53|00:29:22|+0.15|0.58|0.9242|
+|x|          8|         27|        189|   -6722.561098|         79|00:29:21|+0.17|0.45|0.8637|
+|x|          7|         27|        129|   -6866.626717|        105|00:29:11|+0.12|0.34|0.9207|
+|=|          5|         27|        129|   -6897.697133|        131|00:29:06|+0.11|0.29|0.9393|
+|=|          3|         27|        129|   -6885.271628|        157|00:29:21|+0.07|0.23|0.9311|
+|=|         11|         27|        129|   -6903.956652|        183|00:29:24|+0.06|0.19|0.9242|
+|=|          9|         27|        129|   -6917.048417|        209|00:29:15|+0.06|0.18|0.9358|
+|-|          2|          2|        129|   -6920.199602|        235|00:29:02|+0.56|0.60|0.2222|
+|-|          6|          1|        129|   -6923.106675|        236|00:01:05|   NA|  NA|    NA|
+|.|         10|          1|        129|   -6874.956350|        236|00:00:00|   NA|  NA|    NA|
+|.|          4|          1|        129|   -6876.201605|        236|00:00:00|   NA|  NA|    NA|
+|.|          1|          1|        129|   -6888.860407|        236|00:00:00|   NA|  NA|    NA|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         129    mean value:    -6888.860407
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary .PARENT.
+129  129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120      101
+
+# 2020-11-12 02:59:46 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120
+# 2020-11-12 02:59:46 UTC: Iteration 6 of 6
+# experimentsUsedSoFar: 1554
+# remainingBudget: 446
+# currentBudget: 446
+# nbConfigurations: 32
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         14|         32|        201|   -6909.894970|         32|00:35:55|   NA|  NA|    NA|
+|x|          3|         32|        222|   -6811.207270|         63|00:34:37|+0.03|0.52|0.9891|
+|x|          2|         32|        222|   -6813.480468|         94|00:34:52|+0.14|0.42|0.9105|
+|x|          4|         32|        129|   -6853.345924|        125|00:35:16|+0.03|0.28|0.9843|
+|=|          7|         32|        129|   -6882.061010|        156|00:35:06|+0.03|0.22|0.9424|
+|=|          6|         32|        129|   -6893.262563|        187|00:34:09|+0.03|0.19|0.9293|
+|=|         12|         32|        129|   -6883.777991|        218|00:34:38|+0.02|0.16|0.9358|
+|=|         10|         32|        129|   -6822.487381|        249|00:34:18|+0.03|0.15|0.9131|
+|=|          8|         32|        129|   -6847.898966|        280|00:34:19|+0.04|0.14|0.9187|
+|-|         11|         12|        129|   -6864.715749|        311|00:34:16|-0.03|0.07|0.9541|
+|=|          5|         12|        129|   -6879.012389|        322|00:12:10|-0.01|0.09|0.9274|
+|=|         13|         12|        129|   -6855.054965|        333|00:12:07|-0.02|0.06|0.9289|
+|=|          1|         12|        129|   -6869.340432|        344|00:12:07|-0.03|0.05|0.9478|
+|=|          9|         12|        129|   -6879.294028|        355|00:12:02|-0.02|0.06|0.9396|
+|=|         15|         12|        129|   -6876.701970|        367|00:13:09|-0.01|0.05|0.9332|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         129    mean value:    -6876.701970
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary .PARENT.
+129  129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120      101
+
+# 2020-11-12 09:48:54 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120
+# 2020-11-12 09:48:54 UTC: Iteration 7 of 7
+# experimentsUsedSoFar: 1921
+# remainingBudget: 79
+# currentBudget: 79
+# nbConfigurations: 5
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         16|          5|        229|   -6877.579092|          5|00:05:36|   NA|  NA|    NA|
+|x|          5|          5|        129|   -6835.899624|          9|00:04:23|+0.30|0.65|0.2262|
+|x|         10|          5|        231|   -6877.021244|         13|00:04:24|-0.07|0.29|0.8311|
+|x|          3|          5|        230|   -6809.932135|         17|00:04:26|-0.25|0.06|0.9943|
+|=|          1|          5|        230|   -6800.210752|         21|00:04:25|-0.14|0.09|0.9322|
+|=|         15|          5|        229|   -6867.211124|         25|00:04:25|-0.10|0.08|0.8864|
+|=|          4|          5|        129|   -6808.496437|         29|00:04:28|-0.08|0.08|0.9039|
+|=|          6|          5|        129|   -6826.093173|         33|00:04:23|-0.03|0.10|0.8585|
+|=|          2|          5|        129|   -6839.350497|         37|00:04:23|-0.02|0.09|0.8366|
+|=|         12|          5|        129|   -6838.102503|         41|00:04:26|-0.03|0.07|0.8401|
+|=|         14|          5|        129|   -6830.541467|         45|00:04:28|-0.01|0.08|0.8342|
+|=|          8|          5|        129|   -6848.928982|         49|00:04:27|-0.01|0.08|0.8179|
+|=|          9|          5|        129|   -6861.218351|         53|00:04:26|+0.01|0.09|0.7965|
+|=|         11|          5|        129|   -6872.278954|         57|00:04:25|+0.04|0.11|0.7664|
+|=|          7|          5|        129|   -6880.588447|         61|00:04:25|+0.06|0.12|0.7618|
+|=|         13|          5|        129|   -6862.521876|         65|00:04:25|+0.03|0.09|0.7771|
+|=|         17|          5|        129|   -6853.606412|         70|00:05:34|+0.02|0.08|0.7716|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         129    mean value:    -6853.606412
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary .PARENT.
+129  129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120      101
+
+# 2020-11-12 11:06:32 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120
+# 2020-11-12 11:06:32 UTC: Stopped because there is not enough budget left to race more than the minimum (1)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 8
+# nbIterations: 8
+# experimentsUsedSoFar: 1991
+# timeUsed: 0
+# remainingBudget: 9
+# currentBudget: 9
+# number of elites: 1
+# nbConfigurations: 1
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size memtable_cleanup concurrent_compact            compaction_method num_tokens concurrent_reads replication_factor memtable_heap_space memtable_allocation row_cache_size_in_mb sstable_open_interval trickle_fsync inter_dc_stream key_cache_size stream_throughput row_cache_save column_index_size compaction_throughput memtable_offheap_space commitlog_segment mem_flush_writers index_summary
+129                28             288            0.306                 11 SizeTieredCompactionStrategy        158               31                  5                1985        heap_buffers                   11                    87         False             322             93               179             80                90                    27                   1614                40                 6           120
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+129  28 288 0.306 11 SizeTieredCompactionStrategy 158 31 5 1985 heap_buffers 11 87 False 322 93 179 80 90 27 1614 40 6 120

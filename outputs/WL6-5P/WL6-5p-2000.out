@@ -1,0 +1,312 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 3.3.2238:2239
+# Copyright (C) 2010-2019
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /home/moises_silva/R/x86_64-pc-linux-gnu-library/3.4/irace
+# called with: 
+Warning: A default scenario file './scenario.txt' has been found and will be read
+# 2020-07-15 12:29:56 UTC: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 4
+# minNbSurvival: 4
+# nbParameters: 5
+# seed: 1834730933
+# confidence level: 0.95
+# budget: 2000
+# mu: 5
+# deterministic: FALSE
+
+# 2020-07-15 12:29:56 UTC: Iteration 1 of 4
+# experimentsUsedSoFar: 0
+# remainingBudget: 2000
+# currentBudget: 500
+# nbConfigurations: 83
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|         83|          4|   -7486.150621|         83|01:34:35|   NA|  NA|    NA|
+|x|          2|         83|          5|   -6972.679617|        166|01:39:26|-0.01|0.49|0.9177|
+|x|          3|         83|          5|   -6700.998234|        249|01:37:47|+0.02|0.35|0.9494|
+|x|          4|         83|          8|   -5512.785190|        332|02:14:24|+0.01|0.26|0.9659|
+|=|          5|         83|         48|   -5164.231475|        415|01:45:57|+0.01|0.20|0.9742|
+|=|          6|         83|         48|   -5502.998462|        498|01:36:34|+0.03|0.19|0.9502|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          48    mean value:    -5502.998462
+Description of the best-so-far configuration:
+   .ID. concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method .PARENT.
+48   48                53                  1518                       0.69                     6 SizeTieredCompactionStrategy       NA
+
+# 2020-07-15 22:58:42 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+48                53                  1518                       0.69                     6 SizeTieredCompactionStrategy
+52                18                  1355                       0.47                    12    LeveledCompactionStrategy
+53                23                  1146                       0.35                    31    LeveledCompactionStrategy
+22                23                  1536                       0.33                    10    LeveledCompactionStrategy
+# 2020-07-15 22:58:42 UTC: Iteration 2 of 4
+# experimentsUsedSoFar: 498
+# remainingBudget: 1502
+# currentBudget: 500
+# nbConfigurations: 74
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          7|         74|        134|   -2535.239834|         74|01:57:46|   NA|  NA|    NA|
+|x|          4|         74|        134|   -2491.969787|        144|01:51:52|-0.04|0.48|1.0603|
+|x|          1|         74|        114|   -3942.270989|        214|01:20:54|-0.06|0.29|1.0416|
+|x|          2|         74|        114|   -4665.988077|        284|01:19:27|+0.04|0.28|0.9350|
+|-|          6|         45|        134|   -5224.663812|        354|01:12:23|+0.00|0.20|0.9940|
+|=|          5|         45|        139|   -5325.481940|        395|00:44:22|+0.06|0.22|0.9065|
+|=|          3|         45|        114|   -5582.969292|        436|00:44:28|+0.05|0.18|0.9147|
+|=|          8|         45|        114|   -5554.836665|        481|00:52:03|+0.01|0.13|0.9461|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         114    mean value:    -5554.836665
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method .PARENT.
+114  114                27                  1396                       0.63                    13 SizeTieredCompactionStrategy       52
+
+# 2020-07-16 09:02:00 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+114                27                  1396                       0.63                    13 SizeTieredCompactionStrategy
+121                28                  1782                       0.25                    10    LeveledCompactionStrategy
+148                52                  1080                       0.83                     5    LeveledCompactionStrategy
+129                38                  1254                       0.42                    18    LeveledCompactionStrategy
+# 2020-07-16 09:02:00 UTC: Iteration 3 of 4
+# experimentsUsedSoFar: 979
+# remainingBudget: 1021
+# currentBudget: 510
+# nbConfigurations: 60
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          9|         60|        129|   -7638.252368|         60|01:04:43|   NA|  NA|    NA|
+|x|          6|         60|        129|   -7803.507410|        116|01:01:59|+0.03|0.52|0.9212|
+|x|          7|         60|        158|   -5825.371449|        172|01:26:37|+0.08|0.39|0.8970|
+|x|          2|         60|        172|   -6151.689825|        228|00:59:20|-0.07|0.20|1.0394|
+|=|          4|         60|        172|   -5486.834782|        284|01:18:41|-0.02|0.19|1.0508|
+|=|          1|         60|        172|   -5766.506237|        340|01:00:52|+0.01|0.18|1.0090|
+|=|          3|         60|        172|   -5868.199956|        396|01:02:17|-0.04|0.11|1.0492|
+|=|          8|         60|        158|   -5723.016216|        452|01:08:11|-0.04|0.09|1.0497|
+|=|          5|         60|        202|   -5701.122722|        508|01:08:03|-0.02|0.09|1.0337|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         202    mean value:    -5701.122722
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors         compaction_method .PARENT.
+202  202                24                  1594                       0.67                    18 LeveledCompactionStrategy      114
+
+# 2020-07-16 19:12:47 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+202                24                  1594                       0.67                    18    LeveledCompactionStrategy
+158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy
+172                30                  1889                       0.28                     9    LeveledCompactionStrategy
+179                35                  1445                       0.40                    24    LeveledCompactionStrategy
+# 2020-07-16 19:12:47 UTC: Iteration 4 of 4
+# experimentsUsedSoFar: 1487
+# remainingBudget: 513
+# currentBudget: 513
+# nbConfigurations: 54
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         10|         54|        240|   -6975.446429|         54|01:01:11|   NA|  NA|    NA|
+|x|          8|         54|        248|   -5897.643838|        104|01:01:02|-0.20|0.40|1.2127|
+|x|          4|         54|        250|   -4803.450666|        154|01:15:11|-0.06|0.29|1.0856|
+|x|          5|         54|        202|   -4843.482315|        204|01:02:54|+0.01|0.26|1.0038|
+|=|          6|         54|        202|   -5297.058644|        254|00:56:48|+0.01|0.21|0.9997|
+|=|          1|         54|        202|   -5534.437789|        304|00:58:09|+0.03|0.19|0.9609|
+|=|          3|         54|        202|   -5767.722561|        354|01:00:30|+0.05|0.18|0.9153|
+|-|          2|          8|        202|   -5982.596127|        404|01:00:33|+0.24|0.34|0.6429|
+|-|          9|          4|        158|   -6027.632504|        408|00:04:45|-0.09|0.03|0.7941|
+|.|          7|          4|        158|   -5681.832970|        408|00:00:00|-0.10|0.01|0.8148|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         158    mean value:    -5681.832970
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method .PARENT.
+158  158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy      114
+
+# 2020-07-17 03:33:55 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy
+202                24                  1594                       0.67                    18    LeveledCompactionStrategy
+172                30                  1889                       0.28                     9    LeveledCompactionStrategy
+179                35                  1445                       0.40                    24    LeveledCompactionStrategy
+# 2020-07-17 03:33:55 UTC: Iteration 5 of 5
+# experimentsUsedSoFar: 1895
+# remainingBudget: 105
+# currentBudget: 105
+# nbConfigurations: 13
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         11|         13|        158|   -6486.346241|         13|00:15:28|   NA|  NA|    NA|
+|x|         10|         13|        158|   -6384.863350|         22|00:11:04|+0.72|0.86|0.3696|
+|x|          4|         13|        158|   -5198.674185|         31|00:14:46|+0.51|0.67|0.3500|
+|x|          3|         13|        158|   -5606.772563|         40|00:11:07|+0.54|0.66|0.3297|
+|-|          5|          4|        179|   -5388.542784|         49|00:11:55|-0.14|0.09|0.8376|
+|.|          7|          4|        179|   -4902.391979|         49|00:00:00|-0.19|0.01|0.8880|
+|.|          2|          4|        179|   -5241.918828|         49|00:00:00|-0.15|0.01|0.8507|
+|.|          8|          4|        179|   -5229.980915|         49|00:00:00|-0.14|0.01|0.8245|
+|.|          1|          4|        179|   -5409.959061|         49|00:00:00|-0.12|0.01|0.8389|
+|.|          9|          4|        179|   -5607.188461|         49|00:00:00|-0.10|0.01|0.8156|
+|.|          6|          4|        179|   -5740.957122|         49|00:00:00|-0.07|0.03|0.8073|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         158    mean value:    -5754.970540
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method .PARENT.
+158  158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy      114
+
+# 2020-07-17 04:38:17 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy
+172                30                  1889                       0.28                     9    LeveledCompactionStrategy
+202                24                  1594                       0.67                    18    LeveledCompactionStrategy
+179                35                  1445                       0.40                    24    LeveledCompactionStrategy
+# 2020-07-17 04:38:17 UTC: Iteration 6 of 6
+# experimentsUsedSoFar: 1944
+# remainingBudget: 56
+# currentBudget: 56
+# nbConfigurations: 8
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         12|          8|        172|   -6396.315722|          8|00:09:37|   NA|  NA|    NA|
+|x|         11|          8|        158|   -6265.234166|         12|00:04:44|+0.38|0.69|0.2485|
+|x|          2|          8|        172|   -6762.297681|         16|00:04:50|+0.25|0.50|0.5374|
+|x|          6|          8|        172|   -6881.481477|         20|00:04:39|+0.39|0.54|0.5054|
+|-|          3|          5|        158|   -6579.668206|         24|00:04:42|+0.07|0.26|0.7508|
+|=|          1|          5|        172|   -6861.525281|         25|00:01:08|+0.18|0.32|0.6392|
+|=|          9|          5|        158|   -6812.101017|         26|00:01:11|+0.20|0.31|0.5760|
+|-|          7|          4|        158|   -6281.793035|         27|00:01:34|+0.16|0.27|0.6658|
+|.|         10|          4|        158|   -6281.969416|         27|00:00:00|+0.10|0.20|0.7052|
+|.|          8|          4|        158|   -6177.168266|         27|00:00:00|+0.09|0.18|0.7228|
+|.|          4|          4|        158|   -5872.543502|         27|00:00:00|-0.00|0.09|0.7700|
+|.|          5|          4|        158|   -5779.066503|         27|00:00:00|-0.05|0.04|0.7981|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         158    mean value:    -5779.066503
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method .PARENT.
+158  158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy      114
+
+# 2020-07-17 05:10:47 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy
+172                30                  1889                       0.28                     9    LeveledCompactionStrategy
+202                24                  1594                       0.67                    18    LeveledCompactionStrategy
+179                35                  1445                       0.40                    24    LeveledCompactionStrategy
+# 2020-07-17 05:10:47 UTC: Iteration 7 of 7
+# experimentsUsedSoFar: 1971
+# remainingBudget: 29
+# currentBudget: 29
+# nbConfigurations: 5
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         13|          5|        202|   -6410.667350|          5|00:05:55|   NA|  NA|    NA|
+|x|          5|          5|        179|   -5690.959488|          6|00:01:22|+0.70|0.85|0.0557|
+|x|          9|          5|        202|   -6317.845021|          7|00:01:10|+0.40|0.60|0.0998|
+|x|          1|          5|        179|   -6403.489068|          8|00:01:10|+0.35|0.51|0.1482|
+|=|         11|          5|        158|   -6350.312967|          9|00:01:10|-0.01|0.19|0.5994|
+|=|          8|          5|        158|   -6164.253792|         10|00:01:15|+0.05|0.21|0.6398|
+|=|         10|          5|        158|   -6181.271888|         11|00:01:11|+0.09|0.22|0.6230|
+|=|         12|          5|        158|   -6164.128163|         12|00:01:12|-0.03|0.10|0.7462|
+|=|          3|          5|        158|   -6238.232556|         13|00:01:09|+0.03|0.14|0.7103|
+|=|          2|          5|        158|   -6240.975716|         14|00:01:12|+0.05|0.14|0.6836|
+|=|          6|          5|        158|   -6334.627091|         15|00:01:09|+0.09|0.17|0.6391|
+|=|          4|          5|        158|   -6042.266155|         16|00:01:36|+0.11|0.18|0.5983|
+|=|          7|          5|        158|   -5775.140848|         17|00:01:34|+0.11|0.18|0.6166|
+|=|         14|          5|        158|   -5522.899526|         22|00:08:06|+0.06|0.13|0.6766|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         158    mean value:    -5522.899526
+Description of the best-so-far configuration:
+    .ID. concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method .PARENT.
+158  158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy      114
+
+# 2020-07-17 05:40:06 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy
+172                30                  1889                       0.28                     9    LeveledCompactionStrategy
+202                24                  1594                       0.67                    18    LeveledCompactionStrategy
+179                35                  1445                       0.40                    24    LeveledCompactionStrategy
+# 2020-07-17 05:40:06 UTC: Stopped because there is not enough budget left to race more than the minimum (4)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 8
+# nbIterations: 8
+# experimentsUsedSoFar: 1993
+# timeUsed: 0
+# remainingBudget: 7
+# currentBudget: 7
+# number of elites: 4
+# nbConfigurations: 4
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    concurrent_writes file_cache_size_in_mb memtable_cleanup_threshold concurrent_compactors            compaction_method
+158                42                  1313                       0.62                    14 SizeTieredCompactionStrategy
+172                30                  1889                       0.28                     9    LeveledCompactionStrategy
+202                24                  1594                       0.67                    18    LeveledCompactionStrategy
+179                35                  1445                       0.40                    24    LeveledCompactionStrategy
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+158  42 1313 0.62 14 SizeTieredCompactionStrategy
+172  30 1889 0.28 9 LeveledCompactionStrategy
+202  24 1594 0.67 18 LeveledCompactionStrategy
+179  35 1445 0.4 24 LeveledCompactionStrategy
