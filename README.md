@@ -2,6 +2,8 @@ This repository contains a basic experimental setup to automatically configure t
 
 (paper to be submitted)
 
+A full Google Cloud virtual machine to reproduce the experiments can be downloaded [here](https://storage.googleapis.com/deep-tracer-217702-daisy-bkt-us/cassandra-tuning.vmdk) (6.7GB)
+
 # Prerequisites
 - Irace https://iridia.ulb.ac.be/irace/
 - Cassandra https://cassandra.apache.org/
